@@ -83,3 +83,4 @@ C:\Users\Administrator\Documents\Visual Studio 2015\Projects\doanchithang_lab456
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\doanchithang_lab456_1711061719\doanchithang_lab456_1711061719\obj\Debug\doanchithang_lab456_1711061719.csproj.GenerateResource.Cache
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\doanchithang_lab456_1711061719\doanchithang_lab456_1711061719\obj\Debug\doanchithang_lab456_1711061719.Migrations.AddTable2.resources
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\doanchithang_lab456_1711061719\doanchithang_lab456_1711061719\obj\Debug\doanchithang_lab456_1711061719.Migrations.PopulateCategoryTable.resources
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\doanchithang_lab456_1711061719\doanchithang_lab456_1711061719\obj\Debug\doanchithang_lab456_1711061719.Migrations.AddNameColumnToApplicationUser.resources

@@ -1,6 +1,18 @@
-﻿@{
+﻿@model IEnumerable<doanchithang_lab456_1711061719.Models.Course>
+@{
     ViewBag.Title = "Home Page";
 }
 
 <h1>ABL</h1>
 <p>Anh Bi LadyKiller</p>
+
+<div class="row">
+    <ul>
+        @foreach( var course in Model)
+        {
+            <li>
+                @course.DateTime - @course.Lecturer.Name
+            </li>
+        }
+    </ul>
+</div>
