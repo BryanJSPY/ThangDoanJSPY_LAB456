@@ -14,5 +14,6 @@ namespace doanchithang_lab456_1711061719.Models
         [Key]
         [Column(Order = 2)]
         public string AttendId { get; set; }
+        public object AttendeeId { get; internal set; }
     }
 }
