@@ -7,12 +7,27 @@
 <p>Anh Bi LadyKiller</p>
 
 <div class="row">
-    <ul>
+    <ul class="course">
         @foreach( var course in Model)
         {
-            <li>
-                @course.DateTime - @course.Lecturer.Name
-            </li>
+        <li>
+            <div class="date">
+                <div class="month">
+                    @course.DateTime.ToString("MM")
+                </div>
+                <div class="day">
+                    @course.DateTime.ToString("dd")
+                </div>
+            </div>
+            <div class="details">
+                <div class="month">
+                    @course.Lecturer.Name
+                </div>
+                <div class="day">
+                    @course.Category.Name
+                </div>
+            </div>
+        </li>
         }
     </ul>
 </div>

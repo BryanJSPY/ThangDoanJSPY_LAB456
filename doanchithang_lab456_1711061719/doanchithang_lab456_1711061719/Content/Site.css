@@ -55,3 +55,26 @@ h2,
 label{
     color: #4C413C;
 }
+
+.course{
+    list-style: none;
+}
+
+.course > li {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.course > li .date {
+    text-align: center;
+    background-color: #fff;
+    color: #000;
+    width: 60px;
+    border-radius: 8px;
+}
+
+.course > li .details {
+    position: absolute;
+    top: 0;
+    left: 70px;
+}
