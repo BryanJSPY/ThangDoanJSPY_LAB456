@@ -9,6 +9,7 @@ namespace doanchithang_lab456_1711061719.ViewModels
 {
     public class CourseViewModel
     {
+        public int Id { get; set; }
         [Required]
         public string Place { get; set; }
         [Required]

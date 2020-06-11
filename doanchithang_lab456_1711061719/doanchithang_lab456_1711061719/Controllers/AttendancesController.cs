@@ -1,4 +1,5 @@
-﻿using doanchithang_lab456_1711061719.Models;
+﻿using doanchithang_lab456_1711061719.DTOs;
+using doanchithang_lab456_1711061719.Models;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -19,16 +20,17 @@ namespace doanchithang_lab456_1711061719.Controllers
             _dbContext = new ApplicationDbContext();
         }
         [HttpPost]
-        public IHttpActionResult Attend([FromBody] int courseId)
+        public IHttpActionResult Attend(AttendanceDto attendanceDto)
         {
 
             var userId = User.Identity.GetUserId();
-            if (_dbContext.Attendances.Any(a => a.AttendeeId == userId && a.CourseId == courseId))
+            if (_dbContext.Attendances.Any(a => a.AttendeeId == userId && a.CourseId == attendanceDto.CourseId))
                 return BadRequest("The Attendaces already exits!");
             var attendance = new Attendance
             {
-                CourseId = courseId,
-                AttendeeId = userId
+                AttendeeId = userId,
+                CourseId = attendanceDto.CourseId
+                
             };
 
             _dbContext.Attendances.Add(attendance);

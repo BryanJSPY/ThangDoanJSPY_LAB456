@@ -13,7 +13,6 @@ namespace doanchithang_lab456_1711061719.Models
         public ApplicationUser Attendee { get; set; }
         [Key]
         [Column(Order = 2)]
-        public string AttendId { get; set; }
-        public object AttendeeId { get; internal set; }
+        public string AttendeeId { get; set; }
     }
 }
