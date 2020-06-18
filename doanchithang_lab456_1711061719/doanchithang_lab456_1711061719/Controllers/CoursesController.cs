@@ -2,10 +2,10 @@
 using doanchithang_lab456_1711061719.ViewModels;
 using Microsoft.AspNet.Identity;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
+using System.Globalization;
 using System.Linq;
-using System.Web;
+using System.Threading;
 using System.Web.Mvc;
 
 namespace doanchithang_lab456_1711061719.Controllers
@@ -16,15 +16,20 @@ namespace doanchithang_lab456_1711061719.Controllers
         public CoursesController()
         {
             _dbContext = new ApplicationDbContext();
+            CultureInfo culture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
+            culture.DateTimeFormat.ShortDatePattern = "dd-MM-yyyy";
+            culture.DateTimeFormat.LongTimePattern = "";
+            Thread.CurrentThread.CurrentCulture = culture;
         }
         // GET: Courses
         [Authorize]
         public ActionResult Create()
         {
 
-            var viewModel = new CourseViewModel
+            var viewModel = new CourseViewModel()
             {
-                Categories = _dbContext.Categories.ToList()
+                Categories = _dbContext.Categories.ToList(),
+                Heading = "Add Courses"
             };
             return View(viewModel);
         }
@@ -87,18 +92,44 @@ namespace doanchithang_lab456_1711061719.Controllers
         public ActionResult Edit(int id)
         {
             var userId = User.Identity.GetUserId();
+
             var course = _dbContext.Courses.Single(c => c.Id == id && c.LecturerId == userId);
 
             var viewModel = new CourseViewModel
             {
                 Categories = _dbContext.Categories.ToList(),
-                Date = course.DateTime.ToString("yyyy/MM/dd"),
+                Date = course.DateTime.ToString("dd/M/yyyy"),
                 Time = course.DateTime.ToString("HH:mm"),
                 Category = course.CategoryId,
-                Place = course.Place
+                Place = course.Place,
+                Heading = "Edit Courses",
+                Id = course.Id
             };
 
             return View("Create", viewModel);
+        }
+
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Update(CourseViewModel viewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                ViewBag.Categories = _dbContext.Categories.ToList();
+                return View("Create", viewModel);
+            }
+
+            var userId = User.Identity.GetUserId();
+            var course = _dbContext.Courses.Single(c => c.Id == viewModel.Id && c.LecturerId == userId);
+
+            course.Place = viewModel.Place;
+            course.DateTime = viewModel.GetDateTime();
+            course.CategoryId = viewModel.Category;
+
+            _dbContext.SaveChanges();
+
+            return RedirectToAction("Index", "Home");
         }
     }
 }

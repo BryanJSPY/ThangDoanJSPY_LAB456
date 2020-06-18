@@ -213,6 +213,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Api\CoursesController.cs" />
     <Compile Include="Controllers\AttendancesController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\FollowingsController.cs" />
@@ -220,6 +221,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="DTOs\AttendanceDto.cs" />
     <Compile Include="DTOs\FollowingDto.cs" />
+    <Compile Include="DTOs\UnFollowDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -259,6 +261,10 @@
     <Compile Include="Migrations\202006110741496_SuaLoiLan3.designer.cs">
       <DependentUpon>202006110741496_SuaLoiLan3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006171404121_asdasdas.cs" />
+    <Compile Include="Migrations\202006171404121_asdasdas.Designer.cs">
+      <DependentUpon>202006171404121_asdasdas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -267,11 +273,14 @@
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Following.cs" />
+    <Compile Include="Models\FollowingNotification.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\CoursesViewModel.cs" />
     <Compile Include="ViewModels\CourseViewModel.cs" />
+    <Compile Include="ViewModels\FollowingViewModel.cs" />
+    <Compile Include="ViewModels\FollowNotificationViewModel.cs" />
     <Compile Include="ViewModels\FutureDate.cs" />
     <Compile Include="ViewModels\ValidTime.cs" />
   </ItemGroup>
@@ -284,6 +293,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -375,6 +385,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006110741496_SuaLoiLan3.resx">
       <DependentUpon>202006110741496_SuaLoiLan3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006171404121_asdasdas.resx">
+      <DependentUpon>202006171404121_asdasdas.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

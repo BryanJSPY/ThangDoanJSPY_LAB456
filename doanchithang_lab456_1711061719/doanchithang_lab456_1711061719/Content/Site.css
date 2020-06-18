@@ -1,4 +1,5 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 body {
     padding-top: 50px;
     padding-bottom: 20px;
@@ -27,23 +28,22 @@ textarea {
 }
 
 .navbar-inverse {
-    background-color: #D4C4A4;
-    border-color: #D4C4A4;
+    background-color: red;
+    border-color: #000;
 }
 
-.navbar-inverse .navbar-nav > li > a {
-    color: #FFFFFF;
-}
+    .navbar-inverse .navbar-nav > li > a {
+        color: #FFFFFF;
+    }
 
-.navbar-inverse .navbar-brand
-{
-    color: #FFFFFF;
-}
+    .navbar-inverse .navbar-brand {
+        color: #FFFFFF;
+    }
 
-.navbar-inverse .navbar-nav > .dropdown > a .caret {
-    border-top-color: #FFFFFF;
-    border-bottom-color: #FFFFFF;
-}
+    .navbar-inverse .navbar-nav > .dropdown > a .caret {
+        border-top-color: #FFFFFF;
+        border-bottom-color: #FFFFFF;
+    }
 
 .btn-success {
     color: #ffffff;
@@ -52,39 +52,39 @@ textarea {
 }
 
 h2,
-label{
+label {
     color: #4C413C;
 }
 
-.course{
+.course {
     list-style: none;
 }
 
-.course > li {
-    position: relative;
-    margin-bottom: 30px;
-}
+    .course > li {
+        position: relative;
+        margin-bottom: 30px;
+    }
 
-.course > li .date {
-    text-align: center;
-    background-color: #fff;
-    color: #000;
-    width: 60px;
-    border-radius: 8px;
-}
+        .course > li .date {
+            text-align: center;
+            background-color: #fff;
+            color: #000;
+            width: 60px;
+            border-radius: 8px;
+        }
 
-.course > li .details {
-    position: absolute;
-    top: 0;
-    left: 70px;
-}
+        .course > li .details {
+            position: absolute;
+            top: 0;
+            left: 70px;
+        }
 
-.course > li .action {
-    display: none;
-    left: 70px;
-    position: absolute;
-}
+        .course > li .action {
+            display: none;
+            left: 70px;
+            position: absolute;
+        }
 
-.course > li:hover .action {
-    display: block;
-}
+        .course > li:hover .action {
+            display: block;
+        }

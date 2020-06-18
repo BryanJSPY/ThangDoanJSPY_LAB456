@@ -1,4 +1,4 @@
-﻿using doanchithang_lab456_1711061719.DTOs;
+﻿ using doanchithang_lab456_1711061719.DTOs;
 using doanchithang_lab456_1711061719.Models;
 using Microsoft.AspNet.Identity;
 using System;
@@ -19,6 +19,7 @@ namespace doanchithang_lab456_1711061719.Controllers
         {
             _dbContext = new ApplicationDbContext();
         }
+
         [HttpPost]
         public IHttpActionResult Attend(AttendanceDto attendanceDto)
         {
