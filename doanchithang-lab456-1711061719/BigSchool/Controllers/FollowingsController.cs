@@ -29,7 +29,7 @@ namespace BigSchool.Controllers
             var following = new Following
             {
                 FollowerId = userId,
-                FolloweeId = followingDto.FolloweeId
+                FolloweeId = followingDto
             };
 
 
@@ -47,7 +47,7 @@ namespace BigSchool.Controllers
                 Id = 0,
                 Logger = following.Follower.Name + " following " + following.Followee.Name
             };
-            _dbContext.FollowingNotifications.Add(followingNotification);
+            _dbContext.FollowingNotifications.Add(followingNotificatin);
             _dbContext.SaveChanges();
 
 
